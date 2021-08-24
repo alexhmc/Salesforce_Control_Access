@@ -8,6 +8,7 @@ $(document).ready(function () {
 
     oReq.onload = function (e) {
         let info = readData();
+        console.log(info);
         let lastModified = oReq.getResponseHeader("Last-Modified");
         let fechLM = document.querySelector('#lastModified');
         fechLM.innerHTML = `
@@ -21,12 +22,12 @@ $(document).ready(function () {
         info.forEach(element => {
             res.innerHTML += `
 			<tr>
-                <td>${element.squad}</td>
-				<td>${element.puesto}</td>
-				<td>${element.nombreUsuario}</td>
-				<td>${element.manager}</td>
-				<td>${element.delegado}</td>
-				<td>${(element.user).slice(-3)}</td>
+                <td>${element.squad != undefined ? element.squad : ""}</td>
+				<td>${element.puesto != undefined ? element.puesto : ""}</td>
+				<td>${element.nombreUsuario != undefined ? element.nombreUsuario : ""}</td>
+				<td>${element.manager != undefined ? element.manager : ""}</td>
+				<td>${element.delegado != undefined ? element.delegado : ""}</td>
+				<td>${element.user != undefined ? (element.user).slice(-3) : ""}</td>
 				<td style= "text-align: center;">
                 <a class="btn btn-primary" href="#" id="toggleNavPosition" onClick="window.open('https://test.salesforce.com/?startURL=%2Fhome%2Fhome.jsp&un=${element.user}&pw=${element.password}');">Iniciar Sesion</a>
 				</td>
