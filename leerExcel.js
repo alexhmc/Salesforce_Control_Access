@@ -26,8 +26,9 @@ $(document).ready(function () {
 				<td>${element.nombreUsuario}</td>
 				<td>${element.manager}</td>
 				<td>${element.delegado}</td>
+				<td>${(element.user).slice(-3)}</td>
 				<td style= "text-align: center;">
-                <a class="btn btn-primary" href="#" id="toggleNavPosition" onClick="window.open('https://test.salesforce.com/?startURL=%2Fhome%2Fhome.jsp&un=${element.user}&pw=${element.password}');">Sign-in</a>
+                <a class="btn btn-primary" href="#" id="toggleNavPosition" onClick="window.open('https://test.salesforce.com/?startURL=%2Fhome%2Fhome.jsp&un=${element.user}&pw=${element.password}');">Iniciar Sesion</a>
 				</td>
 			</tr>
         `
