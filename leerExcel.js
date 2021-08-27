@@ -8,7 +8,6 @@ $(document).ready(function () {
 
     oReq.onload = function (e) {
         let info = readData();
-        console.log(info);
         let lastModified = oReq.getResponseHeader("Last-Modified");
         let fechLM = document.querySelector('#lastModified');
         fechLM.innerHTML = `
